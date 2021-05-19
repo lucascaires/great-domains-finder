@@ -9,8 +9,8 @@ const FILE = './lista-maio-2021.txt';
 
 fs.readFile(FILE, (err, data) => {
   const rows = String(data).split("\n")
-		.filter(each => {
-			const dn = each.replace(new RegExp(TLDS.join('|')), '')
+    .filter(each => {
+      const dn = each.replace(new RegExp(TLDS.join('|')), '')
 			return each.slice(0,1) !== '#' //ignore commented line
 				&& new RegExp(TLDS.join('|')).test(each) //check if has tld
 				&& dn.split('')
