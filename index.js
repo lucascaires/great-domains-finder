@@ -1,11 +1,11 @@
-const fs = require('fs');
+const fs = require('fs')
 
 //set your config
-const MAX_SIZE = 15;
-const TLDS = ['.com.br', '.net.br'];
-const ALLOWED_CHARS = 'abcdefghijklmnopqrstuvxz';
-const ALLOWED_WORDS = ['abc', 'sos'];
-const FILE = './lista-maio-2021.txt';
+const MAX_SIZE = 15
+const TLDS = ['.com.br', '.net.br']
+const ALLOWED_CHARS = 'abcdefghijklmnopqrstuvxz'
+const ALLOWED_WORDS = ['abc', 'sos']
+const FILE = './lista-maio-2021.txt'
 
 fs.readFile(FILE, (err, data) => {
   const rows = String(data).split("\n")
@@ -20,4 +20,4 @@ fs.readFile(FILE, (err, data) => {
 				&& dn.length <= MAX_SIZE //check size of domain name w/ tld
 		})
 	console.table(rows)
-});
+})
